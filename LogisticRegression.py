@@ -18,5 +18,5 @@ model.fit = model.fit(features_train, target_train)
 predictions = model.fit.predict(features_test)
 
 print("Confusion matrix: ")
-print( confusion_matrix(target_test, predictions))
+print(confusion_matrix(target_test, predictions))
 print('Accuracy percentage', accuracy_score(target_test, predictions)*100, "%")
