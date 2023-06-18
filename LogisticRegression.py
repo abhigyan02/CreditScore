@@ -3,8 +3,9 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_validate
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from sklearn.metrics import accuracy_score
+import matplotlib.pyplot as plt
 
 credit_data = pd.read_csv('credit_data.csv')
 
@@ -23,9 +24,14 @@ model.fit = model.fit(features_train, target_train)
 
 predictions = model.fit.predict(features_test)
 
+confusionMatrix = confusion_matrix(target_test, predictions, labels=model.classes_)
+display = ConfusionMatrixDisplay(confusion_matrix=confusionMatrix, display_labels=model.classes_)
 print("Confusion matrix: ")
-print(confusion_matrix(target_test, predictions))
+display.plot()
+plt.show()
+
 print('Accuracy percentage', accuracy_score(target_test, predictions)*100, "%")
+
 
 # using cross validation to predict a more general accuracy
 prediction = cross_validate(model, X, Y, cv=5)
