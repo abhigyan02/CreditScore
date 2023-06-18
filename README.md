@@ -1,7 +1,7 @@
 # CreditScore
 Implemented a logistic regression model for credit data classification using Python and scikit-learn.
 The model was trained and evaluated on a dataset containing features such as income, age, and loan information to predict whether a customer will default or not. 
-Achieved an accuracy score of 94.67%, indicating the model's effectiveness in predicting credit defaults.
+Achieved an accuracy score of 91.5%, indicating the model's effectiveness in predicting credit defaults.
 
 ![image](https://github.com/abhigyan02/CreditScore/assets/75851981/fa43ccdb-694f-4c7a-9b93-7a6503a6153d)
 
